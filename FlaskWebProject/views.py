@@ -112,7 +112,7 @@ def logout():
     return redirect(url_for('login'))
 
 def _load_cache():
-    cache = None or msal.token_cache
+    cache = msal.SerializableTokenCache()
     return cache
 
 def _save_cache(cache):
